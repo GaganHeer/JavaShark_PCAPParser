@@ -1,0 +1,47 @@
+/**
+ * Gagan Heer
+ * Renzo Pamplona
+ * Rodney Tran
+ */
+
+.root{
+     -fx-background-color: #282828;
+     -fx-font-family: "Meiryo UI";
+     -fx-font-size: 11pt;
+ }
+.button{
+    -fx-background-color: #8BC34A;
+}
+.label{
+    -fx-text-fill: #FAFAFA;
+}
+.chart{
+    -fx-legend-visible: false;
+}
+.menu-bar{
+    -fx-background-color: #000000;
+}
+.context-menu{
+    -fx-background-color: #000000;
+}
+
+.chart-bar{
+    -fx-background-color: #8BC34A;
+}
+.table-row-cell{
+    -fx-background-color: #8BC34A;
+    -fx-border-color: #000000;
+    -fx-border-width: 1.5pt;
+}
+.table-view .column-header-background{
+    -fx-background-color: #282828;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #FAFAFA;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}

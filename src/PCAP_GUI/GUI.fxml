@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PCAP_GUI.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="250.0" style="-fx-border-color: #000; -fx-border-width: 5;">
+         <children>
+            <MenuBar prefWidth="250.0">
+              <menus>
+                <Menu fx:id="openItem" mnemonicParsing="false" onAction="#handleButtonAction" text="File">
+                  <items>
+                        <MenuItem fx:id="openBut" mnemonicParsing="false" text="Open" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem fx:id="packetGraphBut" mnemonicParsing="false" onAction="#handleButtonAction" text="Top Usage" />
+                      <MenuItem fx:id="timeGraphBut" mnemonicParsing="false" onAction="#handleButtonAction" text="Top Times" />
+                        <MenuItem fx:id="dataGraphBut" mnemonicParsing="false" onAction="#handleButtonAction" text="Top Data" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="usageBut" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="Network Usage" translateX="25.0" translateY="50.0" />
+            <Button fx:id="timeBut" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="Time on Network" translateX="25.0" translateY="90.0" />
+            <Button fx:id="dataBut" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="200.0" text="Avg Data Size Sent" translateX="25.0" translateY="130.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="packetBox" layoutX="250.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="packetView" prefHeight="400.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="packetIPCol" prefWidth="300.0" text="IP Address" />
+                <TableColumn fx:id="packetCountCol" prefWidth="300.0" text="Packets" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox fx:id="timeBox" layoutX="250.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="timeView" prefHeight="400.0" prefWidth="600.0">
+              <columns>
+                  <TableColumn fx:id="timeIPCol" prefWidth="200.0" text="IP Address" />
+                  <TableColumn fx:id="timeFirstCol" prefWidth="200.0" text="First Arrival Time " />
+                  <TableColumn fx:id="timeLastCol" prefWidth="200.0" text="Last Arrival Time " />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox fx:id="dataBox" layoutX="250.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="dataView" prefHeight="400.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="dataIPCol" prefWidth="300.0" text="IP Address" />
+                <TableColumn fx:id="dataSizeCol" prefWidth="300.0" text="Avg Data Size" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox fx:id="packetGraphBox" layoutX="250.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <BarChart fx:id="packetGraph" prefHeight="400.0" prefWidth="600.0">
+              <xAxis>
+                <CategoryAxis label="IP Addresses" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="# of Packets Sent" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </VBox>
+      <VBox fx:id="timeGraphBox" layoutX="250.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <BarChart fx:id="timeGraph" prefHeight="400.0" prefWidth="600.0">
+              <xAxis>
+                <CategoryAxis label="IP Addresses" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Time Online in ms" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </VBox>
+      <VBox fx:id="dataGraphBox" layoutX="250.0" prefHeight="410.0" prefWidth="600.0">
+         <children>
+            <BarChart fx:id="dataGraph">
+              <xAxis>
+                <CategoryAxis label="IP Addresses" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Avg Data Sent" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </VBox>
+      <Label fx:id="unloaded" layoutX="400.0" layoutY="175.0" prefHeight="50.0" prefWidth="300.0" style="-fx-alignment: center; -fx-font-size: 20;" text="No File Loaded" />
+      <Label fx:id="loaded" layoutX="400.0" layoutY="175.0" prefHeight="50.0" prefWidth="300.0" style="-fx-alignment: center; -fx-font-size: 20;" text="File Loaded" />
+   </children>
+</AnchorPane>
