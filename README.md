@@ -1,5 +1,5 @@
 # JavaShark
-parse through PCAP files collected via wireshark and display tables/graphs of that info
+Parse through PCAP files collected via wireshark and display tables/graphs of that info
 
 ![No File Loaded](http://i.imgur.com/xkB1ZvC.png?raw=true "No File")
 ![Network Usage](http://i.imgur.com/fq74dRS.png?raw=true "Network Usage")
